@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
- name: grafana-ingress
- namespace: grafana
+ name: prometheus-ingress
+ namespace: prometheus
  annotations:
    kubernetes.io/ingress.class: nginx
 spec:
  rules:
- - host: grafana.lreddy.xyz
+ - host: prometheus.lreddy.xyz
    http:
      paths:
      - path:
        backend:
-         serviceName: grafana
+         serviceName: prometheus-server
          servicePort: 80
